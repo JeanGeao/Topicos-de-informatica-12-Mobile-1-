@@ -1,7 +1,8 @@
-package jean.jeansfood
+package jean.jeansfood.Cenarios.main
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import jean.jeansfood.R
 
 class MainActivity : AppCompatActivity() {
 

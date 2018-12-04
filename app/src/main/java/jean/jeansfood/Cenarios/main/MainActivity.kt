@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
         val presenter : MainContract.Presenter = MainPresenter(this)
         presenter.onLoadList()
     }
@@ -31,7 +32,7 @@ class MainActivity : AppCompatActivity(), MainContract.View {
     override fun showList(food: List<Food>) {
         Toast.makeText(this, "showList ${food.size}", Toast.LENGTH_LONG).show()
 
-        val adapter = FoodAdapter(food)
+        val adapter = FoodAdapter(food, this)
 //        adapter.setOnItemClickListener { position ->
 //            val openBrowser = Intent(Intent.ACTION_VIEW)
 //            openBrowser.data = Uri.parse(food.get(position).url)

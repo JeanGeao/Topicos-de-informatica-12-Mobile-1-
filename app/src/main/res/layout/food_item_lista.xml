@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
+              android:orientation="horizontal"
               android:layout_width="match_parent"
               android:layout_height="64dp"
               android:id="@+id/container">
+
+    <ImageView android:layout_width="100dp" android:layout_height="70dp" android:id="@+id/imgFood"/>
 
     <TextView
             android:id="@+id/tvNome"

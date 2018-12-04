@@ -9,18 +9,23 @@ import retrofit2.Response
 class MainPresenter(val  view: MainContract.View) : MainContract.Presenter {
 
     override fun onLoadList(){
+
+        view.showLoading()
+
         val foodServices = RetrofitInicializer().createFoodServices()
 
-         val call = foodServices.getMaisRescente()
+        val call = foodServices.getMaisRescente()
 
         call.enqueue(object: Callback<FoodList> {
             override fun onFailure(call: Call<FoodList>, t: Throwable) {
+                view.hideLoading()
                 view.showMessage("Erro na conexão. Verifique sua conexão.")
             }
 
             override fun onResponse(call: Call<FoodList>, response: Response<FoodList>) {
+                view.hideLoading()
                 if (response.body() != null) {
-                    view.showList(response.body()!!.Food)
+                    view.showList(response.body()!!.meals)
                 } else {
                     view.showMessage("não há comidas")
                 }

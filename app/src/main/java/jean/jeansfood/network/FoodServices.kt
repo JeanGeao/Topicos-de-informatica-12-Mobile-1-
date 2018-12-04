@@ -11,9 +11,10 @@ interface FoodServices {
         private const val API_KEY = "apiKey=1"
     }
 
-    @GET("latest.php$API_KEY")
+    @GET("latest.php?$API_KEY")
     fun getMaisRescente() : Call<FoodList>
 
     @GET("random.php&$API_KEY")
-    fun getAleatoria()
+    fun getAleatoria(): Call<FoodList>
+
 }

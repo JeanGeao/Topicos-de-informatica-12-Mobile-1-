@@ -1,5 +1,8 @@
 package jean.jeansfood.network
 
+
+import jean.jeansfood.entidades.FoodList
+import retrofit2.Call
 import retrofit2.http.GET
 
 interface FoodServices {
@@ -9,7 +12,7 @@ interface FoodServices {
     }
 
     @GET("latest.php$API_KEY")
-    fun getMaisRescente()
+    fun getMaisRescente() : Call<FoodList>
 
     @GET("random.php&$API_KEY")
     fun getAleatoria()

@@ -21,6 +21,8 @@
         </activity>
         <activity android:name=".Cenarios.detalhes.Detalhes">
         </activity>
+        <activity android:name=".Cenarios.splash.Splash">
+        </activity>
     </application>
 
 </manifest>

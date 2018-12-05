@@ -35,13 +35,9 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         Toast.makeText(this, "showList ${food.size}", Toast.LENGTH_LONG).show()
 
         val adapter = FoodAdapter(food, this)
-//        adapter.setOnItemClickListener { position ->
-//            val openBrowser = Intent(Intent.ACTION_VIEW)
-//            openBrowser.data = Uri.parse(food.get(position).url)
-//            startActivity(OpenBrowser)
-//        }
+
         adapter.setOnItenClickListener {indexItemClicado ->
-            val editaItem = Intent(this, activity_detalhes::class.java)
+            val editaItem = Intent(this, Detalhes::class.java)
             editaItem.putExtra(Detalhes.FOOD, food[indexItemClicado])
             startActivity(editaItem)
         }

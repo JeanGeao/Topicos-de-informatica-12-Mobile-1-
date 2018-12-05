@@ -30,12 +30,12 @@ class FoodAdapter(val foods: List<Food>, val context: Context)
 
     //ele tem acesso aos atributos do adapter
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bindView(foods[position], context, clickListener)
+        holder.bindView(foods[position], position, context, clickListener)
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        fun bindView(food: Food, context: Context, clickListener: ((id: Int) -> Unit)?) {
+        fun bindView(food: Food, position: Int, context: Context, clickListener: ((id: Int) -> Unit)?) {
             itemView.tvNome.text = food.strMeal
 
             GlideApp.with(context)
@@ -45,7 +45,7 @@ class FoodAdapter(val foods: List<Food>, val context: Context)
 
             if (clickListener != null) {
                 itemView.setOnClickListener {
-                    clickListener.invoke(food!!.idMeal)
+                    clickListener.invoke(position)
                 }
             }
         }

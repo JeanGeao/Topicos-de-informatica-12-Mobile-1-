@@ -15,7 +15,7 @@
                 android:id="@+id/strMealThumb"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
-                android:src="http://how2drawanimals.com/images/PandaToon/how-to-draw-cute-cartoon-panda-bear-thumb.jpg" />
+               />
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

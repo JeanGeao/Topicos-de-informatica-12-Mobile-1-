@@ -9,11 +9,12 @@ interface MainContract {
         abstract fun showList(food: List<Food>)
         fun showLoading()
         fun hideLoading()
-
+        fun showDetails(food:Food)
     }
 
     interface Presenter{
         fun onLoadList()
+        fun onLoadRandom()
     }
     
     

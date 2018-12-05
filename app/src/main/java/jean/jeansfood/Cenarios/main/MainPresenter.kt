@@ -34,4 +34,28 @@ class MainPresenter(val  view: MainContract.View) : MainContract.Presenter {
 
 
     }
+
+    override fun onLoadRandom() {
+        view.showLoading()
+
+        val foodServices = RetrofitInicializer().createFoodServices()
+
+        val call = foodServices.getAleatoria()
+
+        call.enqueue(object: Callback<FoodList> {
+            override fun onFailure(call: Call<FoodList>, t: Throwable) {
+                view.hideLoading()
+                view.showMessage("Erro na conexão. Verifique sua conexão.")
+            }
+
+            override fun onResponse(call: Call<FoodList>, response: Response<FoodList>) {
+                view.hideLoading()
+                if (response.body() != null) {
+                    view.showDetails(response.body()!!.meals[0])
+                } else {
+                    view.showMessage("não há comidas")
+                }
+            }
+        })
+    }
 }

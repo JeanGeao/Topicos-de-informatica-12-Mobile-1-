@@ -14,7 +14,7 @@ interface FoodServices {
     @GET("latest.php?$API_KEY")
     fun getMaisRescente() : Call<FoodList>
 
-    @GET("random.php&$API_KEY")
+    @GET("random.php?$API_KEY")
     fun getAleatoria(): Call<FoodList>
 
 }

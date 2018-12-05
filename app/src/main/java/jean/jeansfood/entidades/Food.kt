@@ -1,5 +1,7 @@
 package jean.jeansfood.entidades
 
+import java.io.Serializable
+
 data class Food (
     val	idMeal	:	Int,
     val	strMeal	:	String,
@@ -50,5 +52,4 @@ data class Food (
     val	strMeasure19	:	String	,
     val	strMeasure20	:	String	,
     val	strSource	:	String	,
-    val	dateModified	:	String)
-
+    val	dateModified	:	String): Serializable

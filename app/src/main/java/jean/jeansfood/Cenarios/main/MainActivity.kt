@@ -7,7 +7,9 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.widget.ProgressBar
 import android.widget.Toast
+import jean.jeansfood.Cenarios.detalhes.Detalhes
 import jean.jeansfood.R
+import jean.jeansfood.R.layout.activity_detalhes
 import jean.jeansfood.entidades.Food
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -38,6 +40,11 @@ class MainActivity : AppCompatActivity(), MainContract.View {
 //            openBrowser.data = Uri.parse(food.get(position).url)
 //            startActivity(OpenBrowser)
 //        }
+        adapter.setOnItenClickListener {indexItemClicado ->
+            val editaItem = Intent(this, activity_detalhes::class.java)
+            editaItem.putExtra(Detalhes.FOOD, food[indexItemClicado])
+            startActivity(editaItem)
+        }
 //
         rvFood.adapter = adapter
         rvFood.layoutManager = LinearLayoutManager(this)

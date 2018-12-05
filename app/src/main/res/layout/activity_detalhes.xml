@@ -53,26 +53,30 @@
                     android:background="#232F34"
                     android:layout_marginVertical="24dp"/>
             <TextView
-                    android:text="strIngredient"
+                    android:text="Instructions"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="14dp"
                     android:textStyle="bold"
                     android:textColor="#232F34"
                     android:layout_marginBottom="14dp"/>
-            <android.support.v7.widget.RecyclerView
+            <TextView
+                    android:text="strInstructions"
+                    android:textColor="#232F34"
+                    android:id="@+id/strInstructions"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"/>
+                    android:layout_marginTop="12dp"/>
 
             <TextView
-                    android:text="good appetite"
+                    android:text="enjoy your food"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="14dp"
                     android:textStyle="bold"
                     android:textColor="#232F34"
-                    android:layout_marginBottom="14dp" />
+                    android:layout_marginBottom="14dp"
+            android:layout_marginTop="14dp"/>
             <TextView
                     android:id="@+id/strYoutube"
                     android:layout_width="match_parent"

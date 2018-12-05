@@ -35,6 +35,7 @@ class Detalhes : AppCompatActivity() {
 
             strMeal.text= food!!.strMeal
             strCategory.text= food!!.strCategory
+            strInstructions.text= food!!.strInstructions
             strArea.text= food!!.strArea
             strYoutube.text= food!!.strYoutube
 

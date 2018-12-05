@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
@@ -11,9 +12,9 @@ import android.widget.ProgressBar
 import android.widget.Toast
 import jean.jeansfood.Cenarios.detalhes.Detalhes
 import jean.jeansfood.R
-import jean.jeansfood.R.layout.activity_detalhes
 import jean.jeansfood.entidades.Food
 import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity(), MainContract.View {
     override fun showDetails(food: Food) {
@@ -38,20 +39,25 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
     }
 
+    //exibe a lista
     override fun showList(food: List<Food>) {
-        Toast.makeText(this, "showList ${food.size}", Toast.LENGTH_LONG).show()
+
+
 
         val adapter = FoodAdapter(food, this)
+        val layoutManager = LinearLayoutManager(this)
+        val dividerItemDecoration = DividerItemDecoration(this, layoutManager.orientation)
 
         adapter.setOnItenClickListener {indexItemClicado ->
             val editaItem = Intent(this, Detalhes::class.java)
             editaItem.putExtra(Detalhes.FOOD, food[indexItemClicado])
             startActivity(editaItem)
         }
-//
+
+        //recyclerview(rv)
         rvFood.adapter = adapter
         rvFood.layoutManager = LinearLayoutManager(this)
-
+        rvFood.addItemDecoration(dividerItemDecoration)
 
     }
 

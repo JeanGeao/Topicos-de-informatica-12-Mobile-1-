@@ -9,6 +9,8 @@ class RetrofitInicializer {
 
     val retrofit = Retrofit.Builder()
         .baseUrl("https://www.themealdb.com/api/json/v1/1/")
+
+        //converte o Json para um objeto em kotlin
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 

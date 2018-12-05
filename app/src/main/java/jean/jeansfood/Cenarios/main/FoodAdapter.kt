@@ -13,12 +13,14 @@ import kotlinx.android.synthetic.main.food_item_lista.view.*
 class FoodAdapter(val foods: List<Food>, val context: Context)
     : RecyclerView.Adapter<FoodAdapter.ViewHolder>() {
 
+    //click para exibir detalhes
     private var clickListener : ((id: Int) -> Unit)? = null
 
     fun setOnItenClickListener(click: ((id: Int) -> Unit)) {
         this.clickListener = click
     }
 
+    //relaciona o layout do item ao holder
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.food_item_lista, parent, false)
         return ViewHolder(view)
